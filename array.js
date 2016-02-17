@@ -1,5 +1,5 @@
 /**
- * Search the index of an object in an array of objects.
+ * Searches the index of an object in an array of objects.
  *
  * @param {Array} array - The array where the function will search.
  * @param {String} searchTerm - The string that the function needs to find in the array of objects.
@@ -16,7 +16,7 @@ var indexOf = function (array, searchTerm, property) {
     };
 	
 /**
- * Search the last index of an object in an array of objects.
+ * Searches the last index of an object in an array of objects.
  *
  * @param {Array} array - The array where the function will search.
  * @param {String} searchTerm - The string that the function needs to find in the array of objects.

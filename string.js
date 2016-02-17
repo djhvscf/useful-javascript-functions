@@ -1,5 +1,5 @@
 /**
-* Replace the "%s" string with the respective parameter
+* Replaces the "%s" string with the respective parameter.
 *
 * @param {String} str - The string that the function will replace with the parameters passed.
 * @returns {String} If the parameters are not passed to the function, it will returns an empty string; otherwise, the function returns the string replaced.
