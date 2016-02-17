@@ -60,3 +60,47 @@ var getDuplicatedObjects = function (array, field, removeDuplicatedObjects) {
 	}
 	return duplicated;
 };
+
+/**
+ * Creates a new array with all elements that pass the test implemented by the provided function..
+ *
+ * @param {Function} fun - Function to test each element of the array. Invoked with arguments (element, index, array). Return true to keep the element, false otherwise.
+ * @param {Object} thisArg - Optional. Value to use as this when executing callback.
+ * @returns {Array} Array filtered.
+ */	
+var filterFn = function () {
+	if (!Array.prototype.filter) {
+		Array.prototype.filter = function(fun/*, thisArg*/) {
+			'use strict';
+
+			if (this === void 0 || this === null) {
+				throw new TypeError();
+			}
+
+			var t = Object(this);
+			var len = t.length >>> 0;
+			if (typeof fun !== 'function') {
+				throw new TypeError();
+			}
+
+			var res = [];
+			var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+			for (var i = 0; i < len; i++) {
+				if (i in t) {
+					var val = t[i];
+
+					// NOTE: Technically this should Object.defineProperty at
+					//       the next index, as push can be affected by
+					//       properties on Object.prototype and Array.prototype.
+					//       But that method's new, and collisions should be
+					//       rare, so use the more-compatible alternative.
+					if (fun.call(thisArg, val, i, t)) {
+						res.push(val);
+					}
+				}
+			}
+
+			return res;
+		};
+	}
+};
