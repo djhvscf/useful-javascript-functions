@@ -1,0 +1,1 @@
+for /f %%f in ('dir /b c:\Users\dhernandez\Documents\GitHub\useful-javascript-functions\*.js') do C:\Users\dhernandez\Documents\GitHub\useful-javascript-functions\node_modules\.bin\jsdoc C:\Users\dhernandez\Documents\GitHub\useful-javascript-functions\%%f -d C:\Users\dhernandez\Documents\GitHub\useful-javascript-functions\documentation\%%f
